@@ -8,7 +8,7 @@ import { router } from './router/router.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <div className='urbanist-font'>
+    <div className='urbanist-font max-w-11/12 mx-auto min-h-screen'>
       <RouterProvider router={router} />
     </div>
   </StrictMode>,

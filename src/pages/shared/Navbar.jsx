@@ -1,10 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router";
+import ProFastLogo from "./ProFastLogo";
 
 function Navbar() {
     const navItems = <>
         <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/services">Services</NavLink></li>
+        <li><NavLink to="/coverage">Coverage</NavLink></li>
         <li><NavLink to="/about">About us</NavLink></li>
+        <li><NavLink to="/pricing">Pricing</NavLink></li>
+        <li><NavLink to="/rider">Be a Rider</NavLink></li>
     </>
   return (
     <div className="navbar bg-base-100 shadow-sm">
@@ -34,7 +39,7 @@ function Navbar() {
             {navItems}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <a className="text-xl"><ProFastLogo></ProFastLogo></a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -42,7 +47,10 @@ function Navbar() {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <div className="flex gap-2">
+            <button className="btn bg-white border-black">Sign In</button>
+            <button className="btn bg-lime-200 border-black">Be a Rider</button>
+        </div>
       </div>
     </div>
   );
