@@ -11,7 +11,7 @@ function Banner() {
     <Swiper
       modules={[Autoplay]}
       spaceBetween={30}
-      slidesPerView={2}
+      slidesPerView={1}
       loop={true}
       autoplay={{ delay: 3000, disableOnInteraction: false }}
     >
