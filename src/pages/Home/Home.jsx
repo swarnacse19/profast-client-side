@@ -4,6 +4,7 @@ import Services from './services/Services';
 import Works from './Works';
 import CompanyLogo from './CompanyLogo';
 import Benefits from './Benefits/Benefits';
+import BeMerchant from './BeMerchant';
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
       <Services></Services>
       <CompanyLogo></CompanyLogo>
       <Benefits></Benefits>
+      <BeMerchant></BeMerchant>
     </div>
   );
 }
