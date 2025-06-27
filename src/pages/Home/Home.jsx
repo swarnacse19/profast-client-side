@@ -3,6 +3,7 @@ import Banner from './Banner';
 import Services from './services/Services';
 import Works from './Works';
 import CompanyLogo from './CompanyLogo';
+import Benefits from './Benefits/Benefits';
 
 function Home() {
   return (
@@ -11,6 +12,7 @@ function Home() {
       <Works></Works>
       <Services></Services>
       <CompanyLogo></CompanyLogo>
+      <Benefits></Benefits>
     </div>
   );
 }
