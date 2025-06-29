@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 @plugin "daisyui";
 
@@ -9,8 +9,32 @@
   font-style: normal;
 }
 
-.active{
+.active {
   color: green;
   font-weight: 700;
   text-decoration: underline;
+}
+.slick-slide:not(.slick-center) .testimonial-card {
+  filter: blur(2px) grayscale(50%); /* Blur and desaturate non-center cards */
+  opacity: 0.7;
+  transform: scale(0.95); /* Slightly scale down non-center cards */
+  transition: all 0.3s ease-in-out;
+}
+
+.slick-center .testimonial-card {
+  filter: none;
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hide default arrows if you want custom ones only */
+.slick-prev:before,
+.slick-next:before {
+  display: none !important;
+}
+
+/* Hide default dots if you want custom ones only */
+.slick-dots {
+  display: none !important;
 }

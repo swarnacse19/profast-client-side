@@ -50,41 +50,37 @@ const TestimonialSection = () => {
   ];
 
   const settings = {
-    className: "center", // This is crucial for the center mode
+    className: "center", 
     centerMode: true,
     infinite: true,
-    centerPadding: "60px", // Adjust this value to control how much of side cards are visible
-    slidesToShow: 3, // Show 3 slides: one center, two blurred sides
+    centerPadding: "60px", 
+    slidesToShow: 3, 
     speed: 500,
-    dots: false, // We'll render custom dots
-    arrows: false, // We'll render custom arrows
-    autoplay: true, // Optional: auto-play the slider
+    dots: false, 
+    arrows: false, 
+    autoplay: true, 
     autoplaySpeed: 3000,
-    beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex), // Update current slide index
+    beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex), 
 
-    // Custom classes for active/inactive slides
-    // react-slick adds 'slick-center' to the active slide.
-    // We'll use Tailwind's `group` and `peer` utilities
-    // to style the blur effect based on 'slick-center'.
 
     responsive: [
       {
-        breakpoint: 1024, // lg breakpoint
+        breakpoint: 1024, 
         settings: {
           slidesToShow: 3,
           centerPadding: "40px",
         }
       },
       {
-        breakpoint: 768, // md breakpoint
+        breakpoint: 768, 
         settings: {
-          slidesToShow: 1, // On smaller screens, show one at a time
-          centerPadding: "0px", // No padding for center mode if only 1 slide
-          dots: true, // Maybe show dots on mobile
+          slidesToShow: 1, 
+          centerPadding: "0px", 
+          dots: true, 
         }
       },
       {
-        breakpoint: 640, // sm breakpoint
+        breakpoint: 640, 
         settings: {
           slidesToShow: 1,
           centerPadding: "0px",
@@ -110,35 +106,6 @@ const TestimonialSection = () => {
         <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-12">
           Enhance posture, mobility, and well-being effortlessly with Posture Pro. Achieve proper alignment, reduce pain, and strengthen your body with ease!
         </p>
-
-        {/* Custom styles for slick-carousel blur effect */}
-        <style>
-          {`
-          .slick-slide:not(.slick-center) .testimonial-card {
-            filter: blur(2px) grayscale(50%); /* Blur and desaturate non-center cards */
-            opacity: 0.7;
-            transform: scale(0.95); /* Slightly scale down non-center cards */
-            transition: all 0.3s ease-in-out;
-          }
-
-          .slick-center .testimonial-card {
-            filter: none;
-            opacity: 1;
-            transform: scale(1);
-            transition: all 0.3s ease-in-out;
-          }
-
-          /* Hide default arrows if you want custom ones only */
-          .slick-prev:before, .slick-next:before {
-            display: none !important;
-          }
-
-          /* Hide default dots if you want custom ones only */
-          .slick-dots {
-            display: none !important;
-          }
-          `}
-        </style>
 
         <div className="">
           <Slider ref={sliderRef} {...settings}>

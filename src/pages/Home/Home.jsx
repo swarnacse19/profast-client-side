@@ -6,6 +6,7 @@ import CompanyLogo from './CompanyLogo';
 import Benefits from './Benefits/Benefits';
 import BeMerchant from './BeMerchant';
 import TestimonialSection from './TestimonialSection';
+import Faq from './Faq';
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
       <Benefits></Benefits>
       <BeMerchant></BeMerchant>
       <TestimonialSection></TestimonialSection>
+      <Faq></Faq>
     </div>
   );
 }
