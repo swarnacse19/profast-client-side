@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import ProFastLogo from "./ProFastLogo";
 
 function Navbar() {
@@ -48,7 +48,7 @@ function Navbar() {
       </div>
       <div className="navbar-end">
         <div className="flex gap-2">
-            <button className="btn bg-white border-black">Sign In</button>
+            <Link to="/login" className="btn bg-white border-black">Sign In</Link>
             <button className="btn bg-lime-200 border-black">Be a Rider</button>
         </div>
       </div>
