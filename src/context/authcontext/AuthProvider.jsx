@@ -46,6 +46,7 @@ function AuthProvider({children}) {
         createUser,
         signIn,
         signInWithGoogle,
+        user,
         logout,
     }
   return (

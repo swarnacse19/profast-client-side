@@ -1,8 +1,18 @@
 import React from "react";
 import { Link, NavLink } from "react-router";
 import ProFastLogo from "./ProFastLogo";
+import useAuth from "../../hooks/useAuth";
 
 function Navbar() {
+  const {user, logout} = useAuth();
+ 
+  const handleLogout = () =>{
+    logout().then(() =>{
+      console.log("logout successfully");
+    }).catch(error =>{
+      console.log(error.message);
+    })
+  }
     const navItems = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/services">Services</NavLink></li>
@@ -48,7 +58,9 @@ function Navbar() {
       </div>
       <div className="navbar-end">
         <div className="flex gap-2">
-            <Link to="/login" className="btn bg-white border-black">Sign In</Link>
+            {
+              user ? <button onClick={handleLogout} className="btn bg-white border-black">Logout</button> : <Link to="/login" className="btn bg-white border-black">Sign In</Link>
+            }
             <button className="btn bg-lime-200 border-black">Be a Rider</button>
         </div>
       </div>
