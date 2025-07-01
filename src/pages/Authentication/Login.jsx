@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router";
+import SocialLogin from "./SocialLogin";
 
 function login() {
   const { register, handleSubmit, formState: {errors} } = useForm();
@@ -43,11 +43,7 @@ function login() {
           Register
         </Link>
       </p>
-      <p className="text-center my-2">Or</p>
-      <button className="btn w-[320px] bg-gray-200 text-black border-[#e5e5e5]">
-        <FcGoogle size={30}/>
-        Login with Google
-      </button>
+      <SocialLogin></SocialLogin>
     </div>
   );
 }

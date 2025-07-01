@@ -1,10 +1,12 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router";
 import imageIcon from '../../assets/image-upload-icon.png';
+import useAuth from "../../hooks/useAuth";
+import SocialLogin from "./SocialLogin";
 
 function Register() {
+    const { createUser } = useAuth();
   const {
     register,
     handleSubmit,
@@ -12,7 +14,14 @@ function Register() {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    //console.log(data);
+    createUser(data.email, data.password)
+    .then(result =>{
+        console.log(result.user);
+    })
+    .catch(error =>{
+        console.log(error.message);
+    })
   };
   return (
     <div className="text-black font-medium mx-auto">
@@ -59,11 +68,7 @@ function Register() {
           Login
         </Link>
       </p>
-      <p className="text-center my-2">Or</p>
-      <button className="btn w-[320px] bg-gray-200 text-black border-[#e5e5e5]">
-        <FcGoogle size={30} />
-        Register with Google
-      </button>
+      <SocialLogin></SocialLogin>
     </div>
   );
 }
