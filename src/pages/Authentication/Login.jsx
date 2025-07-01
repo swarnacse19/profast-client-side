@@ -4,7 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router";
 
 function login() {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, formState: {errors} } = useForm();
 
   const onSubmit = (data) => {
     console.log(data);
@@ -25,10 +25,12 @@ function login() {
           <label className="label">Password</label>
           <input
             type="password"
-            {...register("password")}
+            {...register("password", {required: true, minLength: 6})}
             className="input"
             placeholder="Password"
           />
+          {errors.password?.type == 'required' && <p className="text-red-500">This password field is required</p>}
+          {errors.password?.type == 'minLength' && <p className="text-red-500">This password at least must be 6 characters</p>}
           <div>
             <a className="link link-hover">Forgot password?</a>
           </div>
