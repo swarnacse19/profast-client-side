@@ -1,5 +1,6 @@
 import React from "react";
 import { CiDeliveryTruck } from "react-icons/ci";
+import bookingIcon from '../../assets/bookingIcon.png';
 
 function Works() {
   const titleData = [
@@ -22,7 +23,7 @@ function Works() {
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
         {titleData.map((data, idx) => (
         <div key={idx} className="bg-white p-4 rounded-lg">
-            <CiDeliveryTruck size={30}/>
+            <img src={bookingIcon} alt="" />
             <p className="mt-3 text-[16px] font-semibold">{data.title}</p>
             <p className="mt-5 text-gray-700">From personal packages to business shipments — we deliver on time, every time.</p>
         </div>
