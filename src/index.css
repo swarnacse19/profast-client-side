@@ -10,9 +10,8 @@
 }
 
 .active {
-  color: green;
+  background-color: #CAEB66;
   font-weight: 700;
-  text-decoration: underline;
 }
 .slick-slide:not(.slick-center) .testimonial-card {
   filter: blur(2px) grayscale(50%); /* Blur and desaturate non-center cards */

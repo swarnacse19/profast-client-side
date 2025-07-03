@@ -18,7 +18,7 @@ function Navbar() {
         <li><NavLink to="/services">Services</NavLink></li>
         <li><NavLink to="/coverage">Coverage</NavLink></li>
         <li><NavLink to="/about">About us</NavLink></li>
-        <li><NavLink to="/pricing">Pricing</NavLink></li>
+        <li><NavLink to="/parcel">Pricing</NavLink></li>
         <li><NavLink to="/rider">Be a Rider</NavLink></li>
     </>
   return (
@@ -49,7 +49,7 @@ function Navbar() {
             {navItems}
           </ul>
         </div>
-        <a className="text-xl"><ProFastLogo></ProFastLogo></a>
+        <ProFastLogo></ProFastLogo>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
