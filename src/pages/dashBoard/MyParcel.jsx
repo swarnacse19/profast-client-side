@@ -15,7 +15,7 @@ const MyParcel = () => {
     },
   });
 
-  console.log(parcels);
+  //console.log(parcels);
 
   const handleView = (id) => {
     console.log("View parcel", id);
@@ -28,35 +28,36 @@ const MyParcel = () => {
   };
 
   const handleDelete = async (id) => {
-    // const confirm = await Swal.fire({
-    //   title: "Are you sure?",
-    //   text: "This parcel will be permanently deleted!",
-    //   icon: "warning",
-    //   showCancelButton: true,
-    //   confirmButtonText: "Yes, delete it",
-    //   cancelButtonText: "Cancel",
-    //   confirmButtonColor: "#e11d48", // red-600
-    //   cancelButtonColor: "#6b7280", // gray-500
-    // });
-    // if (confirm.isConfirmed) {
-    //   try {
-    //     axiosSecure.delete(`/parcels/${id}`).then((res) => {
-    //       console.log(res.data);
-    //       if (res.data.deletedCount) {
-    //         Swal.fire({
-    //           title: "Deleted!",
-    //           text: "Parcel has been deleted.",
-    //           icon: "success",
-    //           timer: 1500,
-    //           showConfirmButton: false,
-    //         });
-    //       }
-    //       refetch();
-    //     });
-    //   } catch (err) {
-    //     Swal.fire("Error", err.message || "Failed to delete parcel", "error");
-    //   }
-    // }
+    const confirm = await Swal.fire({
+      title: "Are you sure?",
+      text: "This parcel will be permanently deleted!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Yes, delete it",
+      cancelButtonText: "Cancel",
+      confirmButtonColor: "#e11d48", // red-600
+      cancelButtonColor: "#6b7280", // gray-500
+    });
+    if (confirm.isConfirmed) {
+      try {
+        console.log("Trying to delete:", id);
+        axiosSecure.delete(`/parcels/${id}`).then((res) => {
+          console.log(res.data);
+          if (res.data.deletedCount) {
+            Swal.fire({
+              title: "Deleted!",
+              text: "Parcel has been deleted.",
+              icon: "success",
+              timer: 1500,
+              showConfirmButton: false,
+            });
+          }
+          refetch();
+        });
+      } catch (err) {
+        Swal.fire("Error", err.message || "Failed to delete parcel", "error");
+      }
+    }
   };
 
   const formatDate = (iso) => {
@@ -96,7 +97,7 @@ const MyParcel = () => {
                   {parcel.payment_status}
                 </span>
               </td>
-              <td className="space-x-2">
+              <td className="flex gap-2 items-center">
                 <button
                   onClick={() => handleView(parcel._id)}
                   className="btn btn-xs btn-outline"
@@ -106,7 +107,7 @@ const MyParcel = () => {
                 {parcel.payment_status === "unpaid" && (
                   <button
                     onClick={() => handlePay(parcel._id)}
-                    className="btn btn-xs btn-primary text-black"
+                    className="btn btn-xs bg-[#CAEB66] text-black"
                   >
                     Pay
                   </button>
