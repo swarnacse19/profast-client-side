@@ -19,7 +19,12 @@ function Navbar() {
         <li><NavLink to="/coverage">Coverage</NavLink></li>
         <li><NavLink to="/about">About us</NavLink></li>
         <li><NavLink to="/parcel">Pricing</NavLink></li>
-        <li><NavLink to="/rider">Be a Rider</NavLink></li>
+        {/* <li><NavLink to="/rider">Be a Rider</NavLink></li> */}
+        {
+          user && <>
+          <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+          </>
+        }
     </>
   return (
     <div className="navbar bg-base-100 shadow-sm">
