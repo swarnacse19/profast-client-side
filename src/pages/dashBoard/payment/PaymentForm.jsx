@@ -44,6 +44,7 @@ function PaymentForm() {
       return;
     }
 
+    // step- 1: validate the card
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: "card",
       card,
@@ -62,7 +63,8 @@ function PaymentForm() {
       });
 
       const clientSecret = res.data.clientSecret;
-
+      
+      // step-3: confirm payment
       const result = await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
           card: elements.getElement(CardElement),
