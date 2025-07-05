@@ -43,7 +43,7 @@ const MyParcel = () => {
     if (confirm.isConfirmed) {
       try {
         console.log("Trying to delete:", id);
-        axiosSecure.delete(`/parcels/${id}`).then((res) => {
+        axiosSecure.delete(`parcels/${id}`).then((res) => {
           console.log(res.data);
           if (res.data.deletedCount) {
             Swal.fire({
