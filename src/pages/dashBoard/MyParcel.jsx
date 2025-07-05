@@ -3,10 +3,12 @@ import React from "react";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import useAuth from "../../hooks/useAuth";
+import { useNavigate } from "react-router";
 
 const MyParcel = () => {
   const { user } = useAuth();
   const axiosSecure = useAxiosSecure();
+  const navigate = useNavigate();
   const { data: parcels = [], refetch } = useQuery({
     queryKey: ["my-parcels", user.email],
     queryFn: async () => {
@@ -23,8 +25,8 @@ const MyParcel = () => {
   };
 
   const handlePay = (id) => {
-    console.log("Proceed to payment for", id);
-    // Implement your payment logic
+    //console.log("Proceed to payment for", id);
+    navigate(`/dashboard/payment/${id}`);
   };
 
   const handleDelete = async (id) => {
