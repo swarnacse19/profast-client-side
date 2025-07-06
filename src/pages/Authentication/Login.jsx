@@ -51,7 +51,7 @@ function login() {
       </form>
       <p className="font-semibold mt-5 text-gray-400">
         Don't have an account?{" "}
-        <Link to="/register" className="text-[#CAEB66]">
+        <Link state={location.state} to="/register" className="text-[#CAEB66]">
           Register
         </Link>
       </p>
