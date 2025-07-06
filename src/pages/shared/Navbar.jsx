@@ -66,7 +66,7 @@ function Navbar() {
             {
               user ? <button onClick={handleLogout} className="btn bg-white border-black">Logout</button> : <Link to="/login" className="btn bg-white border-black">Sign In</Link>
             }
-            <button className="btn bg-lime-200 border-black">Be a Rider</button>
+            <Link to="/beARider" className="btn bg-lime-200 border-black">Be a Rider</Link>
         </div>
       </div>
     </div>
