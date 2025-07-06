@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../../hooks/useAuth";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
-
+import Loading from "../../../loading/Loading";
 
 const formatDate = (iso) => new Date(iso).toLocaleString();
 
@@ -19,7 +19,7 @@ const PaymentHistory = () => {
   });
 
   if (isPending) {
-    return "...loading";
+    return <Loading></Loading>;
   }
 
   return (
