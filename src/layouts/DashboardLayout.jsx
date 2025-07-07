@@ -89,24 +89,35 @@ const DashboardLayout = () => {
             </NavLink>
           </li>
           {/* riders link */}
-          <li>
-            <NavLink to="/dashboard/active-riders">
-              <FaUserCheck className="inline-block mr-2" />
-              Active Riders
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/pending-riders">
-              <FaUserClock className="inline-block mr-2" />
-              Pending Riders
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/dashboard/makeAdmin">
-              <FaUserShield className="inline-block mr-2" />
-              Make Admin
-            </NavLink>
-          </li>
+          {/* riders link */}
+          {!roleLoading && role === "admin" && (
+            <>
+              {/* <li>
+                <NavLink to="/dashboard/assign-rider">
+                  <FaMotorcycle className="inline-block mr-2" />
+                  Assign Rider
+                </NavLink>
+              </li> */}
+              <li>
+                <NavLink to="/dashboard/active-riders">
+                  <FaUserCheck className="inline-block mr-2" />
+                  Active Riders
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/pending-riders">
+                  <FaUserClock className="inline-block mr-2" />
+                  Pending Riders
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/makeAdmin">
+                  <FaUserShield className="inline-block mr-2" />
+                  Make Admin
+                </NavLink>
+              </li>
+            </>
+          )}
         </ul>
       </div>
     </div>
