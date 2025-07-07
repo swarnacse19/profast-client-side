@@ -6,6 +6,7 @@ import {
   FaBoxOpen,
   FaHome,
   FaMoneyCheckAlt,
+  FaMotorcycle,
   FaSearchLocation,
   FaUserCheck,
   FaUserClock,
@@ -89,15 +90,14 @@ const DashboardLayout = () => {
             </NavLink>
           </li>
           {/* riders link */}
-          {/* riders link */}
           {!roleLoading && role === "admin" && (
             <>
-              {/* <li>
+              <li>
                 <NavLink to="/dashboard/assign-rider">
                   <FaMotorcycle className="inline-block mr-2" />
                   Assign Rider
                 </NavLink>
-              </li> */}
+              </li>
               <li>
                 <NavLink to="/dashboard/active-riders">
                   <FaUserCheck className="inline-block mr-2" />
