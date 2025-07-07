@@ -16,6 +16,7 @@ import TrackParcel from "../pages/dashBoard/TrackParcel/TrackParcel";
 import BeARider from "../pages/dashBoard/BeARider/BeARider";
 import PendingRiders from "../pages/dashBoard/PendingRiders/PendingRiders";
 import ActiveRiders from "../pages/dashBoard/ActiveRiders/ActiveRiders";
+import Forbidden from "../pages/Forbidden";
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
         Component: Coverage,
         loader: () => fetch('./servicesCenter.json'),
         hydrateFallbackElement: <Loading></Loading>
+      },
+      {
+        path: 'forbidden',
+        Component: Forbidden
       },
       {
         path: "parcel",
@@ -85,12 +90,20 @@ export const router = createBrowserRouter([
         Component: TrackParcel
       },
       {
+        path: 'assign-rider',
+        element: <AdminRoute><AssignRider></AssignRider></AdminRoute>
+      },
+      {
         path: "active-riders",
         Component: ActiveRiders
       },
       {
         path: "pending-riders",
         Component: PendingRiders
+      },
+      {
+        path: 'makeAdmin',
+        element: <AdminRoute><MakeAdmin></MakeAdmin></AdminRoute>
       }
     ]
   }
