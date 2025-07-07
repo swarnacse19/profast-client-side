@@ -17,6 +17,7 @@ import BeARider from "../pages/dashBoard/BeARider/BeARider";
 import PendingRiders from "../pages/dashBoard/PendingRiders/PendingRiders";
 import ActiveRiders from "../pages/dashBoard/ActiveRiders/ActiveRiders";
 import Forbidden from "../pages/Forbidden";
+import MakeAdmin from "../pages/dashBoard/MakeAdmin/MakeAdmin";
 
 export const router = createBrowserRouter([
   {
@@ -89,10 +90,10 @@ export const router = createBrowserRouter([
         path: "track",
         Component: TrackParcel
       },
-      {
-        path: 'assign-rider',
-        element: <AdminRoute><AssignRider></AssignRider></AdminRoute>
-      },
+      // {
+      //   path: 'assign-rider',
+      //   element: <AdminRoute><AssignRider></AssignRider></AdminRoute>
+      // },
       {
         path: "active-riders",
         Component: ActiveRiders
@@ -103,7 +104,8 @@ export const router = createBrowserRouter([
       },
       {
         path: 'makeAdmin',
-        element: <AdminRoute><MakeAdmin></MakeAdmin></AdminRoute>
+        // element: <AdminRoute><MakeAdmin></MakeAdmin></AdminRoute>
+        Component: MakeAdmin
       }
     ]
   }
